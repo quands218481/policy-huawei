@@ -27,7 +27,7 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
   app.setViewEngine('hbs');
 
-  const port = 3000;
+  const port = process.env.PORT || 3000;
   const logger = new Logger('NestApplication');
 
   await app.listen(port, () =>
